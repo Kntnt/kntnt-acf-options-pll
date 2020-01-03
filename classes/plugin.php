@@ -15,12 +15,12 @@ class Plugin extends Abstract_Plugin {
         return [
             'public' => [
                 'init' => [
-                    'Translation_Manager',
+                    'Translator',
                 ],
             ],
             'admin' => [
                 'init' => [
-                    'Translation_Manager',
+                    'Translator',
                     'Settings',
                 ],
             ],

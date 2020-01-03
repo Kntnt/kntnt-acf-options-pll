@@ -46,14 +46,17 @@ abstract class Abstract_Settings {
         }
 
         // Update options if the option page is saved.
-        if ( isset( $_POST[ $this->ns ] ) ) {
-            $this->update_options( $_POST[ $this->ns ] );
+        if ( $_POST ) {
+            $opt = isset( $_POST[ $this->ns ] ) ? $_POST[ $this->ns ] : [];
+            $this->update_options( $opt );
         }
 
-        // Rende the option page.
+        // Render the option page.
         $this->render_settings_page();
 
     }
+
+    private $is_saving = false;
 
     /**
      * Returns title used as menu item.
@@ -225,10 +228,6 @@ abstract class Abstract_Settings {
             wp_die( __( 'Nonce failed.', 'kntnt-acf-options-pll' ) );
         }
 
-        // Since the plugin can store other than just these settings in
-        // option, we must keep values not set.
-        $opt = array_merge( Plugin::option(), $opt );
-
         // Get fields
         $fields = $this->fields();
 
@@ -317,6 +316,9 @@ abstract class Abstract_Settings {
                     $opt[ $id ] = $filter( $opt [ $id ] );
                 }
             }
+
+            // Keep other options that are not settings.
+            $opt = array_merge( Plugin::option(), $opt );
 
             // Save inputted values.
             update_option( $this->ns, $opt );

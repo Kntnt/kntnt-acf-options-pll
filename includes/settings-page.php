@@ -112,4 +112,5 @@
             <?php endforeach; ?>
             </tbody>
         </table>
+    </form>
 </div>

@@ -23,7 +23,7 @@ class Settings extends Abstract_Settings {
      */
     protected function fields() {
 
-        $fields['translateable_option_pages'] = [
+        $fields['translatable_option_pages'] = [
             'type' => 'checkbox group',
             'label' => __( 'ACF Option Pages', 'kntnt-acf-options-pll' ),
             'description' => __( 'Check ACF Option pages that should be translatable.', 'kntnt-acf-options-pll' ),
