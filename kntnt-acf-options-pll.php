@@ -6,7 +6,7 @@
  * Plugin URI:        https://github.com/kntnt/kntnt-acf-options-pll
  * GitHub Plugin URI: https://github.com/kntnt/kntnt-acf-options-pll
  * Description:       Makes Advanced Custom Field option pages translatable by Polylang
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-3.0+
