@@ -52,7 +52,7 @@ class Translator {
     // `options` as page id. Adds language code as prefix in the backend.
     public function pre_load_post_id( $post_id, $original_post_id ) {
         $_post_id = $original_post_id;
-        if ( 'option' == substr( $_post_id, 0, 6 ) ) {
+        if ( is_string( $_post_id ) && 'option' == substr( $_post_id, 0, 6 ) ) {
             $_post_id = 'options';
             if ( $this->is_translatable( $this->slug ) ) {
                 $_post_id = $this->translate( $_post_id );
